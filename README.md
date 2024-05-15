@@ -5,11 +5,17 @@ A python package for the CXOnce NICE/inContact API
 This is a work in progress and currently far from complete in terms of endpoints. More will be added over time.
 
 # Installation
+You can either install the package
+
 `pip install nicepy`
+
+or if you download the code, from the folder containing the `setup.py`, you can enter
+
+`pip install .`
 
 Functions that involve media may require one or both of `ffprobe` and `ffmpeg` to be in the system path. If you receive a file not found error this is likely the reason.
 
-## Configuration
+# Configuration
 * In your project folder, create a file `nicepy_config.json` containing the following:
 
 ```json
@@ -26,7 +32,7 @@ Functions that involve media may require one or both of `ffprobe` and `ffmpeg` t
 
 `APIVersion` if not set will default to v28.0. All endpoints with versioning (will) allow passing a version in the call.
 
-### Implemented Functions
+## Implemented Functions
 
 - Agents
   - GetAgents
@@ -35,7 +41,7 @@ Functions that involve media may require one or both of `ffprobe` and `ffmpeg` t
   - GetInactiveAgents
   - AgentByUUID
   - AgentByLogin
-<br/>
+
 - Contacts
   - GetContactDetails
   - GetMultiContactDetails
@@ -47,14 +53,13 @@ Functions that involve media may require one or both of `ffprobe` and `ffmpeg` t
   - GetMultiContactStateHistory (Threaded)
   - GetCompletedContacts
   - IsFinalContact
-<br/>
+
 - Adherence
   - GetAdherenceData
-<br/>
 - Dispositions
   - GetDispositions
 
 
 
-### Usage Examples
+## Usage Examples
 To come
