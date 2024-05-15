@@ -78,7 +78,7 @@ def Fetch_Recording(ContactID, mediaType='voice-only'):
 
 def Fetch_Recording_AudioSegment(ContactID):
   """
-  Fetches the audio recording for the ContactID in mp4 format
+  Fetches the audio recording for the ContactID as a pydub AudioSegment
   """
   mp4Data = Fetch_Recording(ContactID)
   audio = _AudioSegment.from_file(_io.BytesIO(mp4Data), format="mp4")  
