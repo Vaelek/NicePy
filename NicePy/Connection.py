@@ -2,6 +2,7 @@ import os.path as path
 import json
 import requests
 from requests_oauthlib import OAuth2Session
+from datetime import datetime, timedelta
 from oauthlib import oauth2
 
 try:
@@ -20,6 +21,7 @@ Well_Known_URL = "https://cxone.niceincontact.com/.well-known/openid-configurati
 BU_URL = 'https://cxone.niceincontact.com/inContactAPI/services/v27.0/business-unit'
 
 tokenInfo = []
+token_expires = datetime.now()
 
 def GetTokenEndpoint():
     response = requests.get('https://cxone.niceincontact.com/.well-known/openid-configuration')
@@ -46,13 +48,15 @@ def GetAPIEndpoint():
 
 
 def GetAuthToken():
+    global token_expires
     oauth = OAuth2Session(client=oauth2.LegacyApplicationClient(client_id=client_id))
     token = oauth.fetch_token(token_url=GetTokenEndpoint(), client_secret=client_secret, username=username, password=password )
+    token_expires = datetime.now() + timedelta(seconds=token['expires_in'])
     return token
     
 def CheckToken():
     global tokenInfo
-    if (tokenInfo == []):
+    if (tokenInfo == [] or token_expires < datetime.now()):
         tokenInfo = GetAuthToken()
         tokenInfo['api_endpoint'] = GetAPIEndpoint()
         

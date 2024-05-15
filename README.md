@@ -26,3 +26,35 @@ Functions that involve media may require one or both of `ffprobe` and `ffmpeg` t
 
 `APIVersion` if not set will default to v28.0. All endpoints with versioning (will) allow passing a version in the call.
 
+### Implemented Functions
+
+- Agents
+  - GetAgents
+  - GetAgentSkillAssignments
+  - GetAgentStates
+  - GetInactiveAgents
+  - AgentByUUID
+  - AgentByLogin
+<br/>
+- Contacts
+  - GetContactDetails
+  - GetMultiContactDetails
+  - Fetch_Recording
+  - Fetch_Recording_AudioSegment (Threaded)
+  - AudioSegment_To
+  - GetRecordingURL
+  - GetContactStates
+  - GetMultiContactStateHistory (Threaded)
+  - GetCompletedContacts
+  - IsFinalContact
+<br/>
+- Adherence
+  - GetAdherenceData
+<br/>
+- Dispositions
+  - GetDispositions
+
+
+
+### Usage Examples
+To come
