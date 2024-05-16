@@ -1,6 +1,6 @@
 # NicePy
 
-A python package for the CXOnce NICE/inContact API
+A python package for the CXOne NICE/inContact API
 
 This is a work in progress and currently far from complete in terms of endpoints. More will be added over time.
 
